@@ -1,11 +1,28 @@
 body {
-    height: 100vh;
-    margin: 0;
-    background:
-        radial-gradient(circle at top right, var(--c-primary), transparent 70%),
-        radial-gradient(circle at top left, var(--c-secondary), transparent 70%),
-        radial-gradient(circle at bottom center, yellow, transparent 70%);
-        background-blend-mode: screen;
+   margin: 0;
+   background: black;
+   font-family: "Exo 2", sans-serif;
+   font-optical-sizing: auto;
+   color: white;
+}
+
+ body::after {
+   content: "";
+   position: fixed;
+   bottom: -10%;
+   left: 50%;
+   transform: translateX(-50%);
+   width: 140%;
+   height: 70%;
+   background: radial-gradient(
+     ellipse at bottom,
+     #ffdc78e6 0%,
+     rgba(255, 190, 80, 0.6) 30%,
+     rgba(255, 160, 40, 0.3) 55%,
+     rgba(0, 0, 0, 0) 75%
+   );
+   filter: blur(200px);
+   pointer-events: none;
 }
 
 a{
@@ -14,31 +31,125 @@ a{
 }
 
 header {
-    background-color: red;
     height: 12.5vh;
     display: grid;
-    
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 12.5vh 30vh auto;
+    gap: 0;
 }
 
 .logo {
-    height: 10vh;
-    margin: 1.25vh 1.25vh 1.25vh 1.25vh;
-}
-
-.header_c_1 {
-    width: 12.5vh;
+    height: 8vh;
+    margin: 2.25vh 1.25vh 2.25vh 2.25vh;
 }
 
 .header_c_2 {
-    width: 30vh;
-    align-items: left;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
 }
 
 .title {
     font-size: 5vh;
+    color: white;
 }
 
 .header_c_3 {
-
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: right;
+    margin: 0 2.25vh 1vh 0;
 }
+
+/* Menu tlačítka sett.  V V V*/
+
+.menu_btn {
+  position: relative;
+  padding: 10px;
+  text-transform: uppercase;
+  color: #fefefe;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 2.5vh;
+  transition: 0.3s;
+  margin: 0 20px 0 0;
+}
+
+.menu_btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--c-primary);
+  transition: transform 0.3s ease-out;
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.menu_btn:hover::after {
+  transform: scaleX(0);
+}
+
+.menu_btn span {
+  position: relative;
+  z-index: 3;
+  transition: text-shadow 0.3s ease;
+}
+
+.menu_btn:hover span {
+  text-shadow:
+    rgba(255, 220, 120, 0.8) 0 0 20px,
+    rgba(255, 200, 80, 0.6) 0 0 40px;
+}
+
+/* Menu tlačítka sett.  A A A*/
+/* Hero text - hlavní plocha V V V*/
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertikálně na střed */
+    align-items: center;     /* horizontálně na střed */
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
+    margin: -10vh 0 0 0;
+}
+
+.hero {
+    font-size: 8vh;
+    margin: 0 0 0 0;
+}
+
+.slogan {
+    font-size: 2vh;
+    margin: 1vh 0 0 0;
+    font-style: italic;
+    font-weight: 250;
+}
+
+.popis {
+    font-size: 2.5vh;
+    margin: 5vh 15vw 0 15vw;
+    line-height: 1.5;
+}
+/* Hero text - hlavní plocha A A A*/
+/* Main Content V V V*/
+main {
+    border: 2px solid white;
+    margin: 1vw 1vw 1vw 1vw;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Main Content A A A*/

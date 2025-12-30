@@ -4,9 +4,21 @@ body {
    font-family: "Exo 2", sans-serif;
    font-optical-sizing: auto;
    color: white;
+   position: relative;
 }
 
- body::after {
+body::before {
+   content: "";
+   position: fixed;
+   inset: 0;
+   background-image: url("../images/night_sky.jpg"); /* ← SEM jen doplníš cestu */
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   z-index: -2;
+}
+
+body::after {
    content: "";
    position: fixed;
    bottom: -10%;
@@ -23,6 +35,11 @@ body {
    );
    filter: blur(200px);
    pointer-events: none;
+   z-index: -1;
+}
+
+html {
+   scroll-behavior: smooth;
 }
 
 a{
@@ -31,7 +48,7 @@ a{
 }
 
 header {
-    height: 12.5vh;
+    height: 12.5vh; 
     display: grid;
     grid-template-columns: 12.5vh 30vh auto;
     gap: 0;
@@ -40,6 +57,7 @@ header {
 .logo {
     height: 8vh;
     margin: 2.25vh 1.25vh 2.25vh 2.25vh;
+    display: block; 
 }
 
 .header_c_2 {
@@ -114,8 +132,8 @@ header {
     align-items: center;     /* horizontálně na střed */
     text-align: center;
     height: 100vh;
-    width: 100vw;
-    margin: -10vh 0 0 0;
+    width: 100%;
+    margin: 3vh 0 0 0;
 }
 
 .hero {
@@ -135,21 +153,58 @@ header {
     margin: 5vh 15vw 0 15vw;
     line-height: 1.5;
 }
+
+.arrow {
+    width: 2vw;
+    margin: 18vh 0 0 0;
+}
 /* Hero text - hlavní plocha A A A*/
 /* Main Content V V V*/
 main {
-    border: 2px solid white;
-    margin: 1vw 1vw 1vw 1vw;
+    margin: 1vw 5vw 5vw 5vw;
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 15px; 
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
 }
 
 .content {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto auto auto auto;
 }
 
 .card {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    width: auto;
+    height: 30vh;
+    margin: 2vw;
+    //border: 5px solid red;
+    border-radius: 5px;
+    box-shadow: var(--c-primary) 0 0 20px;
+}
+
+.card a {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+.card a span {
+    margin: auto 0 1vh 0;
+    text-align: center;
+}
+
+.card img {
+    height: 9vw;
+    width: 9vw;
+    margin: 1vh 0 0 0;
 }
 /* Main Content A A A*/

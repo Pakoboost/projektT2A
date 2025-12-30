@@ -184,9 +184,11 @@ main {
     width: auto;
     height: 30vh;
     margin: 2vw;
-    //border: 5px solid red;
+    border: 2px solid var(--c-secondary);
     border-radius: 5px;
-    box-shadow: var(--c-primary) 0 0 20px;
+    box-shadow: var(--c-primary) 0 0 20px,
+                inset var(--c-primary) 0 0 20px;
+    background-color: rgba(0,0,0,0.1);
 }
 
 .card a {
@@ -208,3 +210,19 @@ main {
     margin: 1vh 0 0 0;
 }
 /* Main Content A A A*/
+/* Cart V V V*/
+.cart {
+    background-color: rgba(0,0,0,0.1);
+    box-shadow: var(--c-primary) 0 0 20px,
+                inset var(--c-primary) 0 0 20px;
+    width: 3vw;
+    height: auto;
+    font-size: 1vw;
+
+}
+
+.cart img {
+    width: 1vw;
+    height: 1vw;
+}
+/* Cart A A A*/

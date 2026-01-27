@@ -345,6 +345,92 @@ main_about {
 }
 
 .logos {
-    
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 100%;
+    justify-content: center;
 }
 /* About us A A A*/
+/* Cart V V V*/
+main_cart {
+    display: grid;
+    margin: 1vw 5vw 5vw 5vw;
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 15px; 
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    height: 80%;
+}
+
+.h1 {
+    text-align: center;
+    padding: 0px 20px 0px 20px;
+    margin: 0 0 -30px 0;
+}
+
+.h1 h2 {
+    letter-spacing: 10px;
+    font-size: 30px;
+    color: rgb(94, 90, 45);
+}
+
+.h1 h1 {
+    font-size: 40px;
+}
+
+.h1 strong {
+    color: white;
+    text-shadow: rgba(255, 220, 120, 1) 0px 3px 20px;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: auto;
+    margin: -5vh 0 0 0;
+}
+
+.form label {
+    margin: 5px 0 0 0;
+}
+
+.form input, textarea {
+    margin: 0 45vw 0 5px;
+}
+
+.form textarea {
+    resize: none;
+}
+
+.move_btns {
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 100%;
+    position: relative;
+    margin: 5px 0 0 0;
+}
+
+.move_btn1 {
+    position: absolute;
+    right: 40px;
+    top: 30px;
+}
+
+.move_btn2 {
+    position: absolute;
+    left: 40px;
+    top: 30px;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+}
+/* Cart A A A*/
